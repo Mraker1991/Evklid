@@ -1,3 +1,6 @@
+
+
+
 @media (max-width: 1700px) {
   .container {
     min-width: 320px;
@@ -28,18 +31,89 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1030px) {
   .container-section{
     padding: 0 50px;
   }
   .header {
     padding: 26px 50px;
   }
+  /*.header__nav {*/
+  /*  display: none;*/
+  /*}*/
   .header__nav {
-    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40%;
+    min-width: 250px;
+    height: 100vh;
+    z-index: 1000;
+    padding: 170px 0 0 50px;
+    box-shadow: 0 0 5px #888;
+    border-radius: 0px 0px 32px 32px;
+    background-color: var(--color-white);
+    overflow-y: auto;
+    visibility: hidden;
+    transform: translateX(-120%);
+    transition: visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
   }
+
+  .header__nav .nav__list {
+    flex-direction: column;
+  }
+
+  .header__nav .nav__item:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 60px;
+  }
+
+  .header__nav .nav__link {
+    font-size: 24px;
+  }
+
+  .header__nav--active {
+    visibility: visible;
+    transform: none;
+  }
+
+  .burger--active
+  .burger__list:nth-child(2) {
+    opacity: 0;
+    left: -10px;
+
+  }
+  .burger--active
+  .burger__list:first-child {
+    left: 25%;
+    top: 50%;
+    transform: rotate(45deg);
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, left 0.3s ease-in-out;
+  }
+
+  .burger--active
+  .burger__list:last-child {
+    bottom: auto;
+    left: 25%;
+    top: 50%;
+    transform: rotate(-45deg);
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, left 0.3s ease-in-out;
+  }
+  .burger--active {
+    left: -10px;
+  }
+
+  .stop-scroll {
+    overflow: hidden;
+  }
+
+
+
   .burger {
     display: block;
+    z-index: 2000;
   }
   .header__logo {
     display: none;
@@ -49,13 +123,27 @@
   }
   .hero {
     margin-top: 40px;
-    background-image: url(../img/hero-photo-balconies-1_1024.jpg);
-    background-repeat: no-repeat;
+
     border-radius: 32px;
   }
   .hero__decript {
-    padding: 160px 77px;
+    padding: 15% 7%;
+    background-repeat: no-repeat;
+    border-radius: 32px;
   }
+
+  .hero_bg_1 {
+    background-image: url(../img/hero-photo-balconies-1_1024.jpg);
+  }
+
+  .hero_bg_2 {
+    background-image: url(../img/hero-photo-balconies-2_1024.jpg);
+  }
+
+  .hero_bg_3 {
+    background-image: url(../img/hero-photo-balconies-3_1024.jpg);
+  }
+
   .hero__title {
     max-width: 100%;
     font-size: 60px;
@@ -105,7 +193,7 @@
   .questions {
     margin-top: 83px;
   }
-  .questions__text {
+  .accordion__control {
     font-size: 20px;
   }
   .questions__text__text {
@@ -125,7 +213,7 @@
   }
   .center-column__btn {
     padding: 19px 38px;
-    margin-right: 20px; min-height: ;
+    margin-right: 20px;
   }
   .footer__right-column {
     display: none;
@@ -141,9 +229,6 @@
     padding: 10px 50px 10px 50px;
   }
   .hero {
-    background-image: url(../img/hero-photo-balconies-1_768.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
     border-radius: 24px;
   }
   .hero__title {
@@ -156,8 +241,23 @@
     line-height: 21.94px;
   }
   .hero__decript {
-    padding: 160px 40px;
+    padding: 11% 5%;
+    background-repeat: no-repeat;
+    border-radius: 24px;
   }
+
+  .hero_bg_1 {
+    background-image: url(../img/hero-photo-balconies-1_768.jpg);
+  }
+
+  .hero_bg_2 {
+    background-image: url(../img/hero-photo-balconies-2_768.jpg);
+  }
+
+  .hero_bg_3 {
+    background-image: url(../img/hero-photo-balconies-3_768.jpg);
+  }
+
   .card__container {
     min-height: 165px;
     max-height: 500px;
@@ -209,7 +309,7 @@
   .questions {
     margin-top: 48px;
   }
-  .questions__card {
+  .list__item {
     padding: 31px 0;
     height: 58px;
   }
@@ -247,11 +347,21 @@
     align-items: center;
     padding: 60px 24px 59px 22px;
   }
+
+  .hero_bg_1 {
+    background-image: url(../img/hero-photo-balconies-1_320.jpg);
+  }
+
+  .hero_bg_2 {
+    background-image: url(../img/hero-photo-balconies-2_320.jpg);
+  }
+
+  .hero_bg_3 {
+    background-image: url(../img/hero-photo-balconies-3_320.jpg);
+  }
+
   .hero {
     margin-top: 30px;
-    background-image: url(../img/hero-photo-balconies-1_320.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
     border-radius: 16px;
   }
   .hero__title {
@@ -435,17 +545,17 @@
   .questions__list {
     margin-top: 16px;
   }
-  .questions__text {
+  .accordion__control {
     font-size: 14px;
     line-height: 24px;
   }
   .questions__text__text {
     max-width: 249px;
   }
-  .questions__card svg {
+  .list__item svg {
     width: 30px;
   }
-  .questions__card {
+  .list__item {
     padding: 32px 0;
     height: 58px;
   }
@@ -501,5 +611,17 @@
   }
   .left-column__social-container {
     width: auto;
+  }
+  .header__search--input {
+    width: 179px;
+    margin-right: 5px;
+  }
+  .header__search-btn {
+    margin-right: 5px;
+  }
+  .modal__header__search {
+    right: 20px;
+    top: 10px;
+    padding: 21px 15px;
   }
 }
